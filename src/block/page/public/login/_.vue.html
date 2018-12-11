@@ -1,0 +1,72 @@
+<template id="public-login" >
+	<div class="{{prefix.app_p}}block  is--login">
+		<div class="{{prefix.app_p}}container container-fluid  is--login">
+			<div class="{{prefix.app_p}}row row  is--aic  is--login"> 
+				<div class="{{prefix.app_p}}cols cols  is--login" >
+
+					<form class="{{prefix.form}}block  is--login" 
+						method="POST"
+						v-on:submit.prevent="sendForm"
+					><!--v-el:custom  @submit.prevent="doThis"-->
+						<div class="{{prefix.form}}logotip  is--login">
+							[[azbntple tpl="/src/block/common-not-vue/common/svg-sprite/.html" icon-name="logotip" ]]
+						</div>
+						<div class="{{prefix.form}}row row  is--login">
+							<div class="{{prefix.form}}cols cols  is--login">
+								<div class="{{prefix.form}}item  is--login">
+									<input
+										class='{{prefix.form}}control'
+										type='text'
+										name='login'
+										value=''
+										placeholder='Логин'
+										autocorrect='off'
+										autofocus
+										v-model='form.login'
+										/>
+									<div v-if="flags.errors.empty_login" class="{{prefix.form}}alert  color--danger">
+										Введите логин
+									</div>
+								</div>
+							</div>
+							<div class="{{prefix.form}}cols cols  is--login">
+								<div class="{{prefix.form}}item  is--login">
+									<input
+										class='{{prefix.form}}control'
+										type='password'
+										name='pass'
+										value=''
+										placeholder='Пароль'
+										autocomplete='off'
+										autocorrect='off'
+										v-model='form.pass'
+										/>
+									<div v-if="flags.errors.empty_pass" class="{{prefix.form}}alert  color--danger">
+										Введите пароль
+									</div>
+									<div v-if="flags.errors.wrong_access" class="{{prefix.form}}alert  color--danger">
+										Неправильный логин или пароль
+									</div>
+								</div>
+							</div>
+							<div class="{{prefix.form}}cols cols  is--btn  is--login">
+								[[azbntple 
+									tpl="/src/block/common-not-vue/common/button/btn.html"
+									button_prefix="btn__" 
+									button_mod="is--lg"
+									button_type="submit"
+									button_name="Войти"
+								]]
+								<div v-if="flags.states.in_process" class="{{prefix.form}}alert  color--success  align--center">
+									Подождите...
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</template>

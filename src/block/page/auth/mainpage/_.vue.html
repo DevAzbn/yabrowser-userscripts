@@ -1,0 +1,34 @@
+<template id="mainpage" >
+	<div >
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Живая лента</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--jcsb" >
+							<div class="{{prefix.heading}}cols cols">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+					<ul
+						v-if="$store.getters.getFlag('isAuth')"
+					>
+						<li v-for="(item, index) in vueRoutes" v-bind:item="item" v-bind:index="index" v-bind:key="index" class="{{prefix.app}}index-link">
+							<router-link :to="item.path" >{{item.path}}</router-link>
+						</li>
+					</ul>
+					<public-login v-else ></public-login>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

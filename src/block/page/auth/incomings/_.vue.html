@@ -1,0 +1,115 @@
+<template id="incomings" >
+	<div id="common-incomings">
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Входящие звонки</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--gap-xs" > 
+							<div class="{{prefix.heading}}cols cols">
+								<router-link
+									:to="'/incomings/add/'"
+									class="{{prefix.btn}}item  is--sm"
+									active-class=""
+									exact-active-class="">
+									Новая заявка
+								</router-link>
+							</div>
+							<div class="{{prefix.heading}}cols cols">
+								[[azbntple 
+									tpl="/src/block/common-not-vue/common/form/elem-select.html"
+									form_id="{{block_id}}"
+									block_id="select"
+									block_prefix="{{prefix.form}}"
+									block_mod="is--sm"
+									block_color="  "
+									block_option="<option disabled selected>Цель звонка</option><option>Покупка</option><option>Покупка «новострой»</option><option>Покупка «вторичка»</option><option>Продажа</option><option>Продажа и&nbsp;покупка</option><option>Юр. услуги</option><option>Аренда</option><option>Ипотека</option><option>Консультация</option><option>Обмен</option><option>Оценка</option><option>Прочее</option>"
+								]]
+							</div>
+							<div class="{{prefix.heading}}cols cols">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+					<div
+						class="table-responsive  is--mobile"
+					>
+						<table
+							class="table  is--mobile"
+						>
+							<thead>
+								<tr>
+									<th></th>
+									<th>ID</th>
+									<th>Дата</th>
+									<th>Клиент</th>
+									<th>Регион запроса</th>
+									<th>Цель звонка</th>
+									<th>Адрес</th>
+									<th>Категория жилья</th>
+									<th>Комнат</th>
+									<th>Отв. сотрудник</th>
+								</tr>
+							</thead>
+							<tbody >
+								<tr>
+									<td data-heading="">
+										<router-link
+											:to="'/incomings/view/'"
+											class="{{prefix.btn}}icon  is--sm"
+											active-class=""
+											exact-active-class=""
+											title="Просмотр">
+											[[azbntple tpl="/src/block/common-not-vue/common/svg-sprite/.html" icon-name="icon-view" ]]
+										</router-link>
+										<router-link
+											:to="'/incomings/edit/'"
+											class="{{prefix.btn}}icon  is--info  is--sm"
+											active-class=""
+											exact-active-class=""
+											title="Редактирование">
+											[[azbntple tpl="/src/block/common-not-vue/common/svg-sprite/.html" icon-name="icon-edit" ]]
+										</router-link>
+									</td>
+									<td data-heading="ID">1000</td>
+									<td data-heading="Дата">06.12.2018</td>
+									<td data-heading="Клиент" class="is--left">
+										<div class="{{prefix.table}}elem">
+											<span class="{{prefix.table}}elem-label">ФИО: </span>
+											<router-link
+												:to="'#профиль_клиента'"
+												active-class=""
+												exact-active-class="">
+												Лидия Дмитриевна
+											</router-link>
+										</div>
+										<div class="{{prefix.table}}elem">
+											<span class="{{prefix.table}}elem-label">Тел: </span>
+											<a href="tel:+79999999999">
+												+7 999 999 99 99
+											</a>
+										</div>
+									</td>
+									<td data-heading="Регион запроса">Город</td>
+									<td data-heading="Цель звонка">Покупка</td>
+									<td data-heading="Адрес">Андрианова 35</td>
+									<td data-heading="Категория жилья">Новостройка</td>
+									<td data-heading="Комнат">2-ка</td>
+									<td data-heading="Отв. сотрудник">Абашина Наталья</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

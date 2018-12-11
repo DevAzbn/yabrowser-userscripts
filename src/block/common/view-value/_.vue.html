@@ -1,0 +1,23 @@
+<template id="view-value__string--default" >
+	<span >{{value | string__default}}</span>
+</template>
+
+<template id="view-value__string--pass" >
+	<span >{{value | string__pass}}</span>
+</template>
+
+<template id="view-value__string--email" >
+	<a v-bind:href="'mailto:' + value" >{{value}}</span>
+</template>
+
+<template id="view-value__string--phone" >
+	<a v-bind:href="'tel:' + value" >{{value}}</span>
+</template>
+
+<template id="view-value__number--datetime" >
+	<span >{{value | number__datetime}}</span>
+</template>
+
+<template id="view-value__number--pos" >
+	<span >{{value | number__pos}}%</span>
+</template>

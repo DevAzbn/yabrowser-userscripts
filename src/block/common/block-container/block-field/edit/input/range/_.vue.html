@@ -1,0 +1,16 @@
+<template id="block-field__edit__input--range" >
+	<div class='form-group' >
+		<label>{{block.field.title}}</label>
+		<input
+			type="range"
+			class="form-control __input "
+			v-bind:min="block.param.min"
+			v-bind:max="block.param.max"
+			v-bind:step="block.param.step"
+			v-bind:name="block.field.uid"
+			v-bind:required="flags.required"
+			v-bind:disabled="flags.private"
+			v-model="visible"
+		/>
+	</div>
+</template>

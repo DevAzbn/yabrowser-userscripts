@@ -1,0 +1,30 @@
+<template id="vueApp-template" >
+	<div>
+
+		<common-loading
+			v-if="$store.getters.getFlag('isLoading') && !$store.getters.getFlag('classesLoaded')"
+		></common-loading>
+
+		<common-app-auth
+			v-else-if="$store.getters.getFlag('isAuth')"
+		></common-app-auth>
+
+		<common-app-public
+			v-else
+		></common-app-public>
+
+		<common-uploads ></common-uploads>
+
+		<common-dev-errors-list
+			v-if="$store.getters.getFlag('errorViewer')"
+		></common-dev-errors-list>
+
+		<common-modals ></common-modals>
+
+		<!--
+		<test-comp-x v-require-global:dev.test.comp="'test0'" v-bind:x="456" >xaxaxa</test-comp-x>
+		<test v-require-local:dev.test.comp="'test1'" v-bind:x="234" >hahaha</test>
+		-->
+
+	</div>
+</template>

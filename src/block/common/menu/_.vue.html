@@ -1,0 +1,8 @@
+<template id="common-menu" >
+	<ul class="{{prefix.navbar}}nav">
+		<li class="{{prefix.navbar}}nav-item" v-for="(item, index) in items" v-bind:item="item" v-bind:index="index" v-bind:key="index" >
+			<router-link :to="item.path" active-class="is--active" class="{{prefix.navbar}}nav-link">{{item.title}}</router-link>
+			<common-menu v-bind:children="item.children" v-if="item.children" ></common-menu>
+		</li>
+	</ul>
+</template>

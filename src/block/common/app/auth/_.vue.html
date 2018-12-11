@@ -1,0 +1,46 @@
+<template id="common-app-auth" >
+	<div class="{{prefix.app}}page"
+		v-bind:class="{
+			'near-stranger' : $store.getters.getFlag('nearStranger'),
+		}"
+	>
+
+		<common-header></common-header>
+			
+		<div class="{{prefix.app}}block" >
+
+			<navbar class="{{prefix.navbar}}block" v-bind:class="{ 'is--open' : $store.getters.getFlag('menuOpen') }">
+				<div class="{{prefix.navbar}}inner">
+					<ul class="{{prefix.navbar}}nav">
+						<common-menu v-bind:menutype="'left_pos1'" ></common-menu>
+						<li class="{{prefix.navbar}}nav-item  is--divider">
+							Продажа
+						</li>
+						<common-menu v-bind:menutype="'sale'" ></common-menu>
+						<li class="{{prefix.navbar}}nav-item  is--divider">
+							Покупка
+						</li>
+						<common-menu v-bind:menutype="'bay'" ></common-menu>
+						<li class="{{prefix.navbar}}nav-item  is--divider">
+							Агенство
+						</li>
+						<common-menu v-bind:menutype="'company'" ></common-menu>
+						<li class="{{prefix.navbar}}nav-item  is--divider  is--bases">
+							Базы
+						</li>
+						<common-menu v-bind:menutype="'bases'" class="is--bases"></common-menu>
+					</ul>
+				</div>
+			</navbar>
+			<div class="{{prefix.app}}view" >
+				<div class="{{prefix.app}}view-inner" >
+					<router-view ></router-view>
+				</div>
+			</div>
+		</div>
+	
+		<common-footer></common-footer>
+	
+	</div>
+
+</template>

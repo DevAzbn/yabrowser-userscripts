@@ -1,0 +1,60 @@
+<template id="me-access" >
+	<div>
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Загеристрированные в системе профили</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--jcsb" >
+							<div class="{{prefix.heading}}cols cols">
+								<router-link :to="'/auth/admin/profiles/add/'" class="{{prefix.btn}}item  is--sm">Добавить</router-link>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+
+					<div
+						class="table-responsive"
+						v-if="$store.getters.getFlag('isAuth')"
+					>
+						<!--refactor-->
+						<table
+							class="table "
+						>
+							
+							<thead>
+								<tr >
+									<th></th>
+									<th
+										v-for="(level, id) in levels" v-bind:item="level" v-bind:index="id" v-bind:key="id"
+									>
+										{{level}}
+									</th>
+								</tr>
+							</thead>
+							<tbody >
+
+								<tr
+									v-for="(levels, entity_class) in accesses" v-bind:item="levels" v-bind:index="entity_class" v-bind:key="entity_class"
+								>
+									<td >{{entity_class}}</td>
+									<td
+										v-for="(level, id) in levels" v-bind:item="level" v-bind:index="id" v-bind:key="id"
+									>
+										<span v-html="levels[id].join(', ')" ></span>
+									</td>
+								</tr>
+
+							</tbody>
+
+						</table>
+					</div>
+	</div>
+</template>

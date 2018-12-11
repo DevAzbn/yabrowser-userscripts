@@ -1,0 +1,134 @@
+<template id="shows-add" >
+	<div >
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Новый показ</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--gap-xs" >
+							<div class="{{prefix.heading}}cols cols">
+								<router-link 
+									:to="'/shows/'"
+									class="{{prefix.btn}}item  is--warning  is--sm" 
+									>
+									Вернуться назад
+								</router-link>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+					<form class="{{prefix.form}}block">
+						<div class="{{prefix.app}}row row" >
+							<div class="{{prefix.app}}cols cols  is--cols-screen-3  is--cols-12" >
+								<div class="{{prefix.form}}result-group">
+									<div class="{{prefix.form}}label">Клиент</div>
+									<div class="{{prefix.form}}row row">
+										<div class="{{prefix.form}}cols cols">
+											<div class="{{prefix.form}}item">
+												[[azbntple 
+													tpl="/src/block/common-not-vue/common/form/elem-input.html"
+													block_type="text"
+													block_prefix="{{prefix.form}}"
+													block_mod="  "
+													block_color="  "
+													block_placeholder="Поиск клиента"
+												]]
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="{{prefix.form}}result-group">
+									<div class="{{prefix.form}}label">Объект</div>
+									<div class="{{prefix.form}}row row">
+										<div class="{{prefix.form}}cols cols">
+											<div class="{{prefix.form}}item">
+												[[azbntple 
+													tpl="/src/block/common-not-vue/common/form/elem-input.html"
+													block_type="text"
+													block_prefix="{{prefix.form}}"
+													block_mod="  "
+													block_color="  "
+													block_placeholder="Поиск объекта"
+												]]
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="{{prefix.form}}result-group">
+									<div class="{{prefix.form}}label">Сотрудники</div>
+										<div class="{{prefix.form}}row row">
+										<div class="{{prefix.form}}cols cols  is--add">
+											[[azbntple 
+												tpl="/src/block/common-not-vue/common/button/btn-icon-name.html"
+												button_prefix="btn__" 
+												button_mod="is--group  is--success"
+												button_v-on="#"
+												button_icon="icon-add"
+												button_name="Добавить отв. сотрудник" 
+											]]
+										</div>
+									</div>
+								</div>
+								<div class="{{prefix.form}}result-group">
+									<div class="{{prefix.form}}label">Показ</div>
+									<div class="{{prefix.form}}row row">
+										<div class="{{prefix.form}}cols cols">
+											<div class="{{prefix.form}}item">
+												[[azbntple 
+													tpl="/src/block/common-not-vue/common/form/elem-select.html"
+													block_prefix="{{prefix.form}}"
+													block_mod="  "
+													block_color="  "
+													block_option="<option disabled selected>Статус показа</option><option>назначена сотрудником РОП</option><option>назначена офис-менеджером</option><option>назначена РОП</option><option>назначена иным сотрудником ФОН</option><option>Иное</option>"
+												]]
+											</div>
+										</div>
+										<div class="{{prefix.form}}cols cols">	
+											<div class="{{prefix.form}}item">
+												[[azbntple 
+													tpl="/src/block/common-not-vue/common/form/elem-input.html"
+													block_type="text"
+													block_prefix="{{prefix.form}}"
+													block_mod="  "
+													block_color="  "
+													block_placeholder="Дата показа"
+												]]
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="{{prefix.form}}result-group  is--btn">
+									<div class="{{prefix.app}}row row  is--gutter10  is--gap-xs" >
+										<div class="{{prefix.app}}cols cols">
+											<router-link 
+												:to="'/shows/'"
+												class="{{prefix.btn}}item  is--success" 
+												>
+												Сохранить
+											</router-link>
+										</div>
+										<div class="{{prefix.app}}cols cols">
+											<router-link 
+												:to="'/shows/'"
+												class="{{prefix.btn}}item  is--warning" 
+												>
+												Вернуться назад
+											</router-link>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

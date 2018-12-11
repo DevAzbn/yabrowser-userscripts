@@ -1,0 +1,53 @@
+<template id="auth-admin-entity-classes" >
+	<div >
+		
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Сущности</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--jcsb" >
+							<div class="{{prefix.heading}}cols cols">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+					<div class='table-responsive' v-if="entity_classes && entity_classes.length" >
+						<table class='table' >
+							
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th class="is--left">Class</th>
+								</tr>
+							</thead>
+			
+							<tbody>
+								<tr
+									v-for="(item, index) in entity_classes" v-bind:item="item" v-bind:index="index" v-bind:key="index"
+								>
+									<td>
+										{{item.id}}
+									</td>
+									<td class="is--left">
+										<router-link :to="'/auth/admin/entity/items/?entity_class=' + item.entity_class" >{{item.entity_class}}</router-link>
+									</td>
+								</tr>
+							</tbody>
+			
+						</table>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

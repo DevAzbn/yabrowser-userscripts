@@ -1,0 +1,117 @@
+<template id="inspections" >
+	<div id="common-inspections">
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Осмотры</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--gap-xs" >
+							<div class="{{prefix.heading}}cols cols">
+								<router-link
+									:to="'/inspections/add/'"
+									class="{{prefix.btn}}item  is--sm"
+									active-class=""
+									exact-active-class="">
+									Добавить осмотр
+								</router-link>
+							</div>
+							<div class="{{prefix.heading}}cols cols">
+								[[azbntple 
+									tpl="/src/block/common-not-vue/common/form/elem-select.html"
+									form_id="{{block_id}}"
+									block_id="select"
+									block_prefix="{{prefix.form}}"
+									block_mod="is--sm"
+									block_color="  "
+									block_option="<option disabled selected>Отв. сотрудник</option><option>Бурдина Елена</option><option>Львова Татьяна </option><option>Гребенникова Наталья</option><option>Колесниченко Максим</option><option>Степанова Анастасия</option><option>Липовецкий А.</option><option>Буцева Эллен</option><option>Северин Мария</option><option>Кузин Игорь</option><option>Бурмистров Александр</option><option>Фролов Глеб</option><option>Абашина Наталия</option><option>Шеховцов Андрей</option><option>Машкарина Зухра</option>"
+								]]
+							</div>
+							<div class="{{prefix.heading}}cols cols">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+					<div
+						class="table-responsive  is--mobile"
+					>
+						<table
+							class="table  is--mobile"
+						>
+							<thead>
+								<tr>
+									<th></th>
+									<th>ID</th>
+									<th>Дата осмотра</th>
+									<th>Адрес объекта</th>
+									<th>Клиент</th>
+									<th>Результат осмотра</th>
+									<th>Статус после осмотра</th>
+									<th>Отметка о добавлении</th>
+									<th>Отв. сотрудник</th>
+								</tr>
+							</thead>
+							<tbody >
+								<tr>
+									<td data-heading="">
+										<router-link
+											:to="'/inspections/view/'"
+											class="{{prefix.btn}}icon  is--sm"
+											active-class=""
+											exact-active-class=""
+											title="Просмотр">
+											[[azbntple tpl="/src/block/common-not-vue/common/svg-sprite/.html" icon-name="icon-view" ]]
+										</router-link>
+										<router-link
+											:to="'/inspections/edit/'"
+											class="{{prefix.btn}}icon  is--info  is--sm"
+											active-class=""
+											exact-active-class=""
+											title="Редактирование">
+											[[azbntple tpl="/src/block/common-not-vue/common/svg-sprite/.html" icon-name="icon-edit" ]]
+										</router-link>
+									</td>
+									<td data-heading="ID">500</td>
+									<td data-heading="Дата">06.12.2018</td>
+									<td data-heading="Адрес объекта">
+										<div class="{{prefix.table}}elem">
+											ул. Революции 12 кв. 5
+										</div>
+									</td>
+									<td data-heading="Клиент" class="is--left">
+										<div class="{{prefix.table}}elem">
+											<span class="{{prefix.table}}elem-label">ФИО: </span>
+											<router-link
+												:to="'#профиль_клиента'"
+												active-class=""
+												exact-active-class="">
+												Лидия Дмитриевна
+											</router-link>
+										</div>
+										<div class="{{prefix.table}}elem">
+											<span class="{{prefix.table}}elem-label">Тел: </span>
+											<a href="tel:+79999999999">
+												+7 999 999 99 99
+											</a>
+										</div>
+									</td>
+									<td data-heading="Результат осмотра">Осмотр состоялся</td>
+									<td data-heading="Статус после осмотра">Готов сотрудничать на устной договоренности	</td>
+									<td data-heading="Отметка о добавлении">Соглашение о рекламе</td>
+									<td data-heading="Отв. сотрудник">Гребенникова Наталья</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

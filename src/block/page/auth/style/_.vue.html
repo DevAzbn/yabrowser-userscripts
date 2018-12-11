@@ -1,0 +1,61 @@
+<template id="style" >
+	<div >
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Страница стилей</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--jcsb" >
+							<div class="{{prefix.heading}}cols cols">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+					<div class="{{prefix.app}}elem" >
+						[[azbntple 
+							tpl="/src/block/common-not-vue/common/color/include.html"
+							block_prefix="{{content_prefix}}"
+							block_heading="Палитра"
+						]]
+					</div>
+					<div class="{{prefix.app}}elem" >
+						[[azbntple 
+							tpl="/src/block/common-not-vue/common/page-header/include.html"
+							block_prefix="{{content_prefix}}"
+							block_heading="Заголовки"
+						]]
+					</div>
+					<div class="{{prefix.app}}elem" >
+						[[azbntple 
+							tpl="/src/block/common-not-vue/common/button/include.html"
+							block_prefix="{{content_prefix}}"
+							block_heading="Кнопки и ссылки"
+						]]  
+					</div>
+					<div class="{{prefix.app}}elem" >
+						[[azbntple 
+							tpl="/src/block/common-not-vue/common/form/include.html"
+							block_prefix="{{content_prefix}}"
+							block_heading="Формы"  
+						]]        
+					</div> 
+					<div class="{{prefix.app}}elem" >
+						[[azbntple 
+							tpl="/src/block/common-not-vue/common/table/include.html"
+							block_prefix="{{content_prefix}}"
+							block_heading="Таблицы"  
+						]]        
+					</div>           
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

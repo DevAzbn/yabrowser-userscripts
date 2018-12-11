@@ -1,0 +1,158 @@
+<template id="contract-sale-view" >
+	<div>
+		
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Карточка ДОУ ID 218 от 06.12.2018</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--gap-xs" >
+							<div class="{{prefix.heading}}cols cols">
+								<router-link 
+									:to="'/contract/sale/edit/'"
+									class="{{prefix.btn}}item  is--info  is--sm" 
+									>
+									Редактировать
+								</router-link>
+							</div>
+							<div class="{{prefix.heading}}cols cols">
+								<router-link 
+									:to="'/contract/sale/'"
+									class="{{prefix.btn}}item  is--warning  is--sm" 
+									>
+									Вернуться назад
+								</router-link>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+					<div class="{{prefix.app}}row row  is--gutter" >
+						<div class="{{prefix.app}}cols cols  is--cols-screen-3  is--cols-12" >
+							<div class="{{prefix.form}}result-group">
+								<div class="{{prefix.form}}label">Клиент</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">ФИО:</div> 
+									<div class="{{prefix.form}}result-value cols">Лидия Дмитриевна</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Телефон:</div> 
+									<div class="{{prefix.form}}result-value cols">+7 999 999 99 99</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Статус клиента:</div> 
+									<div class="{{prefix.form}}result-value cols">Собственник</div> 
+								</div>
+							</div>
+							<div class="{{prefix.form}}result-group">
+								<div class="{{prefix.form}}label">Сотрудники</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Отв. сотрудник:</div> 
+									<div class="{{prefix.form}}result-value cols">Абашина Наталья</div> 
+								</div>
+							</div>
+							<div class="{{prefix.form}}result-group">
+								<div class="{{prefix.form}}label">Объект</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Регион запроса:</div> 
+									<div class="{{prefix.form}}result-value cols">Орловская область</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Город:</div> 
+									<div class="{{prefix.form}}result-value cols">Орёл</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Район:</div> 
+									<div class="{{prefix.form}}result-value cols">Северный</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Адрес:</div> 
+									<div class="{{prefix.form}}result-value cols">Андрианова 35</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">№ кв:</div> 
+									<div class="{{prefix.form}}result-value cols">141</div>
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Этаж:</div> 
+									<div class="{{prefix.form}}result-value cols">8</div>
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Кол-во комнат:</div> 
+									<div class="{{prefix.form}}result-value cols">2</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Общая площадь:</div> 
+									<div class="{{prefix.form}}result-value cols">55 м<sup>2</sup></div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Стоимость:</div> 
+									<div class="{{prefix.form}}result-value cols">1 500 000</div> 
+								</div>
+							</div>
+							<div class="{{prefix.form}}result-group">
+								<div class="{{prefix.form}}label">ДОУ</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Дата подписания:</div>
+									<div class="{{prefix.form}}result-value cols">29.11.2018</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Дата окончания:</div>
+									<div class="{{prefix.form}}result-value cols">29.02.2019</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Предоплата:</div>
+									<div class="{{prefix.form}}result-value cols">3000</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Комиссия по ДОУ:</div>
+									<div class="{{prefix.form}}result-value cols">50 000</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Монтаж баннера:</div>
+									<div class="{{prefix.form}}result-value cols">Есть</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Статус:</div>
+									<div class="{{prefix.form}}result-value cols">на исполнении</div> 
+								</div>
+								<div class="{{prefix.form}}result-card  row  is--gap-xs">
+									<div class="{{prefix.form}}result-heading cols">Примечание:</div>
+									<div class="{{prefix.form}}result-value cols">оплачены понесенные расходы 10000</div> 
+								</div>
+							</div>
+						</div>
+						<div class="{{prefix.app}}cols cols  is--cols-12" >
+							<div class="{{prefix.form}}result-group  is--btn">
+								<div class="{{prefix.app}}row row  is--gutter10  is--gap-xs" >
+									<div class="{{prefix.app}}cols cols">
+										<router-link 
+											:to="'/contract/sale/edit/'"
+											class="{{prefix.btn}}item  is--info" 
+											>
+											Редактировать
+										</router-link>
+									</div>
+									<div class="{{prefix.app}}cols cols">
+										<router-link 
+											:to="'/contract/sale/'"
+											class="{{prefix.btn}}item  is--warning" 
+											>
+											Вернуться назад
+										</router-link>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,25 @@
+<template id="field-edit__upload" >
+	<div class='form-group' >
+		
+		<div >
+			<input
+				type='file'
+				class='form-control __input'
+				name=''
+				v-bind:multiple="multiple ? true : false"
+				v-bind:data-namespace="namespace"
+				v-on:change="upload"
+			/>
+		</div>
+
+		<ul
+			class='__uploaded'
+			v-if="items"
+		>
+			<li v-for="(item, index) in items" v-bind:item="item" v-bind:index="index" v-bind:key="index" >
+				<a v-bind:href="item.path" >{{item.title}}</a>
+			</li>
+		</ul>
+
+	</div>
+</template>

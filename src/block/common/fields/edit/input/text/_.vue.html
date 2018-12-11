@@ -1,0 +1,16 @@
+<template id="field-edit__input--text" >
+	<div class='{{prefix.form}}cols  cols'>
+		
+		<div class='{{prefix.form}}item' >
+			<input  
+				type='text'
+				v-bind:class="'{{prefix.form}}control'"
+				v-bind:name="'item[' + field_uid + ']'"
+				v-bind:required="parent_params[field_index].params.required"
+				v-model="value"
+				v-bind:placeholder="parent_params[field_index].params.title"
+			/>
+		</div>
+
+	</div>
+</template>

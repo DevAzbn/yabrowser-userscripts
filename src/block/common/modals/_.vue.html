@@ -1,0 +1,14 @@
+<template id="common-modals" >
+	<div v-if="items.length" >
+		<div
+			class="modal-mask"
+			v-for="(item, i) in items" v-bind:key="i" v-bind:index="i" v-bind:item="item"
+		>
+			<div class="modal-wrapper">
+				<div class="modal-container" v-html="genComponentTemplate(i, item)" >
+
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

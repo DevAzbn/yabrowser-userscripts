@@ -1,0 +1,25 @@
+<template id="common-pagination" >
+	<div
+		v-if="pagination.amount > pagination.size"
+		aria-label="page navigation"
+		class="{{prefix.pagin}}block"
+	>
+		<ul class="{{prefix.pagin}}list">
+			
+			<li
+				class="{{prefix.pagin}}item"
+				v-for="i in pages"
+			>
+				<router-link
+					v-bind:to="{query : {entity_class : $route.query.entity_class, page : i}}"
+					v-bind:class="{'disabled' : (pagination.page == i)}"
+					class="{{prefix.pagin}}link"
+					exact-active-class="is--active"
+				>
+				{{i}}
+				</router-link>
+			</li>
+			
+		</ul>
+	</div>
+</template>

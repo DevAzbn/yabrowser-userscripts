@@ -1,0 +1,57 @@
+<template id="auth-admin-entity-add" >
+	<div >
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Создание новой сущности {{entity_class.entity_class}}</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--jcsb" >
+							<div class="{{prefix.heading}}cols cols">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+					<div class="{{prefix.app}}row row" >
+						<div class="{{prefix.app}}cols cols  is--cols-screen-3  is--cols-12" >
+							<div v-if="false"
+								v-for="(field, index) in entity_class.fields" v-bind:item="field" v-bind:index="index" v-bind:key="index"
+							>
+								{{index}} : {{field.title}}
+							</div>
+
+							<form
+								v-if="entity_class && entity_class.fields"
+								v-on:submit.prevent="save"
+							>
+								<div class="{{prefix.form}}result-group">
+									<div class="{{prefix.form}}label">Основные поля</div>
+
+									<entity-add-form-builder
+										v-bind:fields="fields"
+										v-bind:entity_class="entity_class"
+									>
+									</entity-add-form-builder>
+								</div>
+
+								<div class="{{prefix.form}}result-group  is--btn">
+									<field-edit__submit
+
+									>
+									</field-edit__submit>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

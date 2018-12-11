@@ -1,0 +1,64 @@
+<template id="auth-admin-entity-item" >
+	<div v-if="entity.item" >
+		
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Карточка профиля</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10" >
+							<div class="{{prefix.heading}}cols cols">
+								
+							</div>
+							<div class="{{prefix.heading}}cols cols">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+					<div class="{{prefix.app}}row row  is--gutter" >
+						<div class="{{prefix.app}}cols cols  is--cols-screen-4  is--cols-12" >
+							<div class="{{prefix.form}}result-group">
+								<div class="{{prefix.form}}label">Информация</div>
+								<div
+									v-for="(field, k) in entity_class.fields" v-bind:item="field" v-bind:index="k" v-bind:key="k"
+									class="{{prefix.form}}result-card  row  is--gap-xs"
+								>
+									<div class="{{prefix.form}}result-heading cols">{{field.title}}:</div> 
+									<div class="{{prefix.form}}result-value cols">{{entity.item(field.uid)}}</div> 
+									
+								</div>
+							</div>
+
+							<div class="{{prefix.form}}result-group  is--btn">
+								<div class="{{prefix.app}}row  row  is--gap-xs is--gutter10">
+									<div class="{{prefix.app}}cols cols">
+										<router-link 
+											:to="'/entity/item/?entity_class=' + entity_class_str + '&id=' + entity.item('id') + '&edit=1'"
+											class="{{prefix.btn}}item  is--info" 
+											>
+											Редактировать
+										</router-link>
+									</div>
+									<div class="{{prefix.app}}cols cols">
+										<button
+											class="{{prefix.btn}}item  is--danger" 
+											v-on:click.prevent="remove"
+										>Удалить</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,60 @@
+<template id="auth-dev-component" >
+	<div>
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Подключение компонента</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--jcsb" >
+							<div class="{{prefix.heading}}cols cols">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+					<div class="{{prefix.app}}row row" >
+						<div class="{{prefix.app}}cols cols  is--cols-screen-3" >
+							<form class="{{prefix.form}}block" method="GET" v-on:submit.prevent="sendForm" >
+								<div class="{{prefix.form}}row row" >
+									<div class="{{prefix.form}}cols cols" >
+										<div class="{{prefix.form}}item" >
+											<label class="{{prefix.form}}label">Компонент</label>
+											<input class="{{prefix.form}}control" name="component" v-model="component_t" placeholder="Название компонента" >
+										</div>
+										<div class="{{prefix.form}}item" >
+											<label class="{{prefix.form}}label">Параметры, передаваемые в компонент</label>
+											<input class="{{prefix.form}}control" name="props" v-model="props_t" placeholder="Параметры" >
+										</div>
+										<div class="{{prefix.form}}item" >
+											<input type="submit" class="btn__item" value="Обновить" >
+										</div>
+									</div>
+								</div>
+							</form>
+
+							<div
+								v-if="component && props"
+							>
+								<hr />
+								<div>
+									<common-dev-component-viewer
+										v-bind:component="component"
+										v-bind:props="props"
+										v-bind:data-component="component"
+										v-bind:data-props="props"
+									></common-dev-component-viewer>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

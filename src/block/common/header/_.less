@@ -1,0 +1,91 @@
+@header_bg	 			:	@black-33;
+.header__{
+	&block{
+		@media @media-point-device-lg {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 100;
+		}
+		background-color: @header_bg;
+		padding: 10px 0;
+	}
+	&device{
+		@media @media-point-screen-lg {
+			//display: none;
+		}
+	}
+	&screen{
+		@media @media-point-device-lg {
+			//display: none;
+		}
+	}
+	&cols{
+		&.is--logotip{
+			@media @media-point-xxs {
+				display: none;
+			}
+		}
+		&.is--humb{
+			@media @media-point-screen-lg {
+				display: none;
+			}
+		}
+		&.is--nav{
+			margin-right: auto;
+			.makeColsOffset(0.9, 12);
+			align-self: flex-end;
+			@media @media-point-device-lg {
+				display: none;
+			}
+		}
+	}
+	&logotip{
+		display: block;
+		//@media @media-point-screen-lg {
+			width: 117px;
+			height: 40px;
+		//}
+	}
+	&nav{
+		display: flex;
+		align-items: flex-end;
+		list-style: none;
+		margin-left: -7.5px;
+		margin-right: -7.5px;
+		margin-bottom: -10px;
+	}
+	&nav-item{
+		padding-left: 7.5px;
+		padding-right: 7.5px;
+	}
+	&nav-link{
+		display: block;
+		background-color: @black-b5;
+		color: @b-color;
+		padding: 10px 15px;
+		&:hover{
+			background-color: @white;
+			color: @default;
+		}
+		&.is--active{
+			background-color: @default;
+			color: @white;
+			cursor: default;
+		}
+	}
+	&user{
+		display: block;
+		width: 40px;
+		height: 40px;
+		border: 2px solid @white;
+		border-radius: @b_rad;
+		img{
+			object-fit: cover;
+			object-position: center;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}

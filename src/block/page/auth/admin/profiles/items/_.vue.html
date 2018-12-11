@@ -1,0 +1,98 @@
+<template id="auth-admin-profiles-items" >
+	<div >
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Загеристрированные в системе профили</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--jcsb" >
+							<div class="{{prefix.heading}}cols cols">
+								<router-link :to="'/auth/admin/profiles/add/'" class="{{prefix.btn}}item  is--sm">Добавить</router-link>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+
+					<div class='table-responsive' v-if="items" >
+						<table class='table' >
+							
+							<thead>
+								<tr>
+									<th
+										v-for="(item, index) in Object.values(fields)" v-bind:item="item" v-bind:index="index" v-bind:key="index"
+										v-if="1"
+									>
+										{{item.title}}
+									</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr
+									v-for="(item, index) in items" v-bind:item="item" v-bind:index="index" v-bind:key="index"
+									v-bind:data-class="entity_class.entity_class"
+								>
+									<td
+										v-for="(_item, _index) in fields" v-bind:item="_item" v-bind:index="_index" v-bind:key="_index"
+										v-if="1"
+									>
+										<view-value
+											v-if="_item.uid == 'created_at' || _item.uid == 'online_at'"
+											v-bind:template="'number--datetime'"
+											v-bind:value="item.item[_item.uid]"
+										></view-value>
+										<view-value
+											v-else-if="_item.uid == 'pos'"
+											v-bind:template="'number--pos'"
+											v-bind:value="item.item[_item.uid]"
+										></view-value>
+										<view-value
+											v-else-if="_item.uid == 'api_key' || _item.uid == 'pass'"
+											v-bind:template="'string--pass'"
+											v-bind:value="item.item[_item.uid]"
+										></view-value>
+										<view-value
+											v-else-if="_item.uid == 'email'"
+											v-bind:template="'string--email'"
+											v-bind:value="item.item[_item.uid]"
+										></view-value>
+										<view-value
+											v-else-if="_item.uid == 'phone'"
+											v-bind:template="'string--phone'"
+											v-bind:value="item.item[_item.uid]"
+										></view-value>
+										<view-value
+											v-else-if="_item.uid != 'title'"
+											v-bind:template="'string--default'"
+											v-bind:value="item.item[_item.uid]"
+										></view-value>
+										<router-link
+											v-else
+											v-bind:to="'/entity/item/?entity_class=' + entity_class.entity_class + '&id=' + item.item.id"
+										>
+											{{item.item[_item.uid]}}
+										</router-link>
+									</td>
+								</tr>
+							</tbody>
+
+						</table>
+					</div>
+
+					<common-pagination
+						v-if="pagination && pagination.amount"
+						v-bind:pagination="pagination"
+					></common-pagination>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

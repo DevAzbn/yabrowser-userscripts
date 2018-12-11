@@ -1,0 +1,1 @@
+"use strict";var imgURL=chrome.runtime.getURL("img/");!function(e){var t;(t=e(".extInstall")).length&&t.remove()}(jQuery);

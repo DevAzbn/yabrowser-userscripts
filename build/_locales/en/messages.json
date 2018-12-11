@@ -1,0 +1,14 @@
+{
+	"app_name": {
+		"message": "YaBrowser User Scripts"
+	},
+	"app_description": {
+		"message": "User scripts for Browser"
+	},
+	"browser_action": {
+		"message": ""
+	},
+	"azbn_background_init": {
+		"message": "Extension initialized"
+	}
+}

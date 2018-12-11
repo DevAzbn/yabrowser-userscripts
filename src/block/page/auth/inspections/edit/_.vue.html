@@ -1,0 +1,106 @@
+<template id="inspections-edit" >
+	<div >
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Редактировать осмотр ID 1000 от 06.12.2018</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--gap-xs" >
+							<div class="{{prefix.heading}}cols cols">
+								<router-link 
+									:to="'/inspections/'"
+									class="{{prefix.btn}}item  is--warning  is--sm" 
+									>
+									Вернуться назад
+								</router-link>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+					<form class="{{prefix.form}}block">
+						<div class="{{prefix.app}}row row" >
+							<div class="{{prefix.app}}cols cols  is--cols-screen-3  is--cols-12" >
+								<div class="{{prefix.form}}result-group">
+									<div class="{{prefix.form}}label">Осмотр</div>
+									<div class="{{prefix.form}}row row">
+										<div class="{{prefix.form}}cols cols">
+											<div class="{{prefix.form}}item">
+												[[azbntple 
+													tpl="/src/block/common-not-vue/common/form/elem-select.html"
+													block_prefix="{{prefix.form}}"
+													block_mod="  "
+													block_color="  "
+													block_option="<option disabled selected>Результат осмотра</option><option>Осмотр состоялся</option><option>Осмотр не состоялся</option><option>От осмотра отказались</option><option>Осмотр перенесли</option>"
+												]]
+											</div>
+										</div>
+										<div class="{{prefix.form}}cols cols">
+											<div class="{{prefix.form}}item">
+												[[azbntple 
+													tpl="/src/block/common-not-vue/common/form/elem-select.html"
+													block_prefix="{{prefix.form}}"
+													block_mod="  "
+													block_color="  "
+													block_option="<option disabled selected>Статус после осмотра</option><option>Заключен ДОУ продажа</option><option>Заключен ДОУ покупка</option><option>Заключен ДОУ юридическое сопровождение</option><option>Заключен ДОУ ипотечное сопровождение</option><option>Готов сотрудничать на устной договоренности</option><option>Не готов сотрудничать</option><option>Заключено соглашение о рекламе</option>"
+												]]
+											</div>
+										</div>
+										<div class="{{prefix.form}}cols cols">
+											<div class="{{prefix.form}}item">
+												[[azbntple 
+													tpl="/src/block/common-not-vue/common/form/elem-select.html"
+													block_prefix="{{prefix.form}}"
+													block_mod="  "
+													block_color="  "
+													block_option="<option disabled selected>Отметка о добавлении</option><option>добавлен в базу</option><option>добавлен в рекламу</option><option>Соглашение о рекламе</option><option>Заключено ДОУ</option><option>Устная договоренность</option>"
+												]]
+											</div>
+										</div>
+										<div class="{{prefix.form}}cols cols">
+											<div class="{{prefix.form}}item">
+												[[azbntple 
+													tpl="/src/block/common-not-vue/common/form/elem-select.html"
+													block_prefix="{{prefix.form}}"
+													block_mod="  "
+													block_color="  "
+													block_option="<option disabled selected>Конечный статус</option><option>Сделка совершена </option><option>Сделка расторгнута</option><option>Сделка не состоялась</option><option>соглашение </option><option>заключен ДОУ</option><option>устное соглашение </option>"
+												]]
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="{{prefix.form}}result-group  is--btn">
+									<div class="{{prefix.app}}row row  is--gutter10  is--gap-xs" >
+										<div class="{{prefix.app}}cols cols">
+											<router-link 
+												:to="'/inspections/'"
+												class="{{prefix.btn}}item  is--success" 
+												>
+												Сохранить
+											</router-link>
+										</div>
+										<div class="{{prefix.app}}cols cols">
+											<router-link 
+												:to="'/inspections/'"
+												class="{{prefix.btn}}item  is--warning" 
+												>
+												Вернуться назад
+											</router-link>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,39 @@
+<template id="me-edit" >
+	<div
+		v-if="$store.getters.getFlag('isAuth')"
+	>
+		<div class="{{prefix.app}}header" > 
+			<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+				<div class="{{prefix.heading}}panel" >
+					<div class="{{prefix.heading}}group" >
+						<h1 class="{{prefix.heading}}heading  is--h5">Редактировать мой профиль</h1>
+					</div>
+					<div class="{{prefix.heading}}btn" >
+						<div class="{{prefix.heading}}row row  is--gutter10  is--jcsb" >
+							<div class="{{prefix.heading}}cols cols">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="{{prefix.app}}content" >
+			<div class="{{prefix.app}}content-inner" >
+				<div class="{{prefix.app}}container  container-fluid  is--fluid" >
+					<div
+						class="profile_photo"
+						v-if="photo_path"
+					>
+						<img
+							v-bind:src="photo_path"
+						>
+					</div>
+					<label><input type="checkbox" v-model="multiple" /> множественная загрузка</label>
+					<br />
+					<button class="btn__item  is--success"  v-on:click.prevent="uploadPhoto" >Загрузить</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

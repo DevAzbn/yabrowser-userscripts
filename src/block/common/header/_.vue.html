@@ -1,0 +1,102 @@
+<template id="common-header" >
+	<header class="{{prefix.header}}block">
+		<div class="{{prefix.header}}container  container-fluid">
+			<div class="{{prefix.header}}row row  is--jcsb">
+				<div class="{{prefix.header}}cols cols  is--humb">
+					<button class="{{prefix.navbar}}hamburger-card" @click="hamb" v-bind:class="{'is--active' : buttonActive}">
+						<span class="{{prefix.navbar}}hamburger-card-inner">
+							<span class="{{prefix.navbar}}hamburger-card-line  is--left"></span>
+							<span class="{{prefix.navbar}}hamburger-card-line  is--center"></span>
+							<span class="{{prefix.navbar}}hamburger-card-line  is--right"></span>
+						</span>
+					</button>
+				</div>
+				<div class="{{prefix.header}}cols cols  is--logotip">
+					<router-link
+						:to="'/mainpage/'"
+						class="{{prefix.header}}logotip"
+						active-class=""
+						exact-active-class="">
+						[[azbntple tpl="/src/block/common-not-vue/common/svg-sprite/.html" icon-name="logotip" ]]
+					</router-link>
+				</div>
+				<div class="{{prefix.header}}cols cols  is--nav">
+					<ul class="{{prefix.header}}nav">
+						<li class="{{prefix.header}}nav-item">
+							<router-link
+								:to="'#Клиенты'"
+								class="{{prefix.header}}nav-link"
+								active-class="is--active"
+								exact-active-class="">
+								Клиенты
+							</router-link>
+						</li>
+						<li class="{{prefix.header}}nav-item">
+							<router-link
+								:to="'#Объявления'"
+								class="{{prefix.header}}nav-link"
+								active-class="is--active"
+								exact-active-class="">
+								Объявления
+							</router-link>
+						</li>
+						<li class="{{prefix.header}}nav-item">
+							<router-link
+								:to="'#Новостройки'"
+								class="{{prefix.header}}nav-link"
+								active-class="is--active"
+								exact-active-class="">
+								Новостройки
+							</router-link>
+						</li>
+					</ul>					
+				</div>
+				<div class="{{prefix.header}}cols cols  is--btn">
+					<div class="{{prefix.header}}row row  is--gap-xs">
+						<div class="{{prefix.header}}cols cols">
+							<router-link
+								:to="'/me/edit/'"
+								class="{{prefix.header}}user"
+								active-class=""
+								exact-active-class=""
+								v-bind:title="'Личный кабинет пользователя ' + session.profile.item.view_as"
+								>
+								<img
+									v-bind:src="photo_path"
+									alt=""
+									class="img-responsive"
+									/>
+							</router-link>
+						</div>
+						<div class="{{prefix.header}}cols cols">
+							<button
+								class="btn__icon  is--lg"
+								type="button"
+								@click="changeNearStranger"
+								v-bind:class="$store.getters.getFlag('nearStranger') ? 'is--warning' : 'is--success'"
+								v-bind:title="$store.getters.getFlag('nearStranger') ? 'В сети' : 'Я с клиентом'"
+							>
+								<svg class="icon-svg icon-lock" role="img">
+									<use
+										v-bind:xlink:href="$store.getters.getFlag('nearStranger') ? '{{path-img}}/svg/sprite.svg#icon-lock' : '{{path-img}}/svg/sprite.svg#icon-unlock'"
+									 ></use>
+								</svg>
+							</button>
+						</div>
+						<div class="{{prefix.header}}cols cols">
+							[[azbntple 
+								tpl="/src/block/common-not-vue/common/button/btn-icon.html"
+								button_prefix="btn__" 
+								button_mod="is--danger  is--lg"
+								button_type="button"
+								button_v-on="logOut"
+								button_icon="icon-exit"
+								button_title="Выйти"
+							]]
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</template> 

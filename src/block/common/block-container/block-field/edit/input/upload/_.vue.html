@@ -1,0 +1,26 @@
+<template id="block-field__edit__input--upload" >
+	<div >
+		
+		<div class='form-group' >
+			<input
+				type='file'
+				class='form-control __input'
+				v-bind:name="index"
+				v-bind:multiple="block.field.multiple ? true : false"
+				v-bind:data-namespace="params.ns.upload"
+				v-on:change="fileUpload__afterSelect"
+			/>
+		</div>
+
+		<ul
+			class='__uploaded'
+			v-if="upload.items"
+		>
+			<li v-for="(__item, __index) in upload.items" v-bind:item="__item" v-bind:index="__index" v-bind:key="__index" >
+				<input type="hidden" name="[]" v-bind:value="__item.item.id" />
+				<a v-bind:href="__item.item.path" >{{__item.item.title}}</a>
+			</li>
+		</ul>
+
+	</div>
+</template>

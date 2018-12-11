@@ -1,0 +1,93 @@
+<template id="block-field__edit__select--entity" >
+	<div class='' >
+		<label>{{block.field.title}}</label>
+
+		<div >
+
+			<div
+				class='form-group'
+				v-if="entity_classes && entity_classes.length"
+			>
+				<label>Тип сущности</label>
+				<select
+					class='form-control '
+					v-on:change="loadEntities"
+					v-model="entity_class_id"
+				>
+					<option value="0" selected disabled >Выберите класс</option>
+					<option
+						v-for="(_item, _index) in (entity_classes)" v-bind:item="_item" v-bind:index="_index" v-bind:key="_index"
+						v-bind:value='_item.id'
+					>
+						{{_item.entity_class}}
+					</option>
+				</select>
+			</div>
+
+			<div
+				class='form-group'
+				v-if="entity_class_id"
+			>
+				<label>Сущность</label>
+				<input
+					type='text'
+					class='form-control'
+					v-model="filter_by"
+				/>
+
+				<div class="row" >
+					<div class="col-sm-6" >
+						<ul
+							v-if="entities && entities.length"
+						>
+							<li
+								v-for="(_item, _index) in (entities)" v-bind:item="_item" v-bind:index="_index" v-bind:key="_index"
+							>
+								<a
+									v-bind:href="'#' + _item.item.id"
+									v-on:click.prevent="selectItem(event, _item)"
+								>
+									{{_item.item.title}}
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-sm-6" >
+						<div
+							v-if="selected && selected.length"
+						>
+							<b-badge
+								pill
+								variant="warning"
+								v-for="(_item, _index) in (selected)" v-bind:item="_item" v-bind:index="_index" v-bind:key="_index"
+								v-on:click.prevent="unselectItem(event, _index)"
+							>
+								{{_item.item.title}}
+							</b-badge>
+						</div>
+						
+						<!--
+						<select
+							class='form-control '
+							v-if="entities && entities.length"
+							multiple="multiple"
+							v-model="entity_id"
+						>
+							<option value="0" selected disabled >Выберите запись</option>
+							<option
+								v-for="(_item, _index) in (entities)" v-bind:item="_item" v-bind:index="_index" v-bind:key="_index"
+								v-bind:value='_item.item.id'
+							>
+								{{_item.item.title}}
+							</option>
+						</select>
+						-->
+					</div>
+				</div>
+				
+			</div>
+
+		</div>
+
+	</div>
+</template>
