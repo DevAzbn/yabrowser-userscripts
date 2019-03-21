@@ -3,8 +3,9 @@
 	
 	"name" : "__MSG_app_name__",
 	"description" : "__MSG_app_description__",
-	"version" : "0.1.0",
+	"version" : "0.1.4",
 	"default_locale" : "ru",
+	"author": "azbn",
 	
 	"icons" : {
 		"16" : "img/16x16.png",
@@ -19,6 +20,12 @@
 		"storage",
 		"notifications",
 		"unlimitedStorage",
+		"proxy",
+		"contextMenus",
+		"history",
+		"background",
+		"proxy",
+		"browsingData",
 		"http://*/*",
 		"https://*/*"
 	],
@@ -46,7 +53,8 @@
 		"scripts" : [
 			"js/background/main.js"
 		],
-		"persistent" : false
+		"persistent" : false,
+		"_persistent постоянная работа" : true
 	}
 
 }
