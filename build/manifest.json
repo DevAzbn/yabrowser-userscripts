@@ -3,7 +3,7 @@
 	
 	"name" : "__MSG_app_name__",
 	"description" : "__MSG_app_description__",
-	"version" : "0.1.4",
+	"version" : "0.1.5",
 	"default_locale" : "ru",
 	"author": "azbn",
 	
@@ -55,6 +55,15 @@
 		],
 		"persistent" : false,
 		"_persistent постоянная работа" : true
+	},
+
+	"browser_action" : {
+		"default_icon" : {
+			"19" : "img/32x32.png",
+			"38" : "img/48x48.png"
+		},
+		"default_popup" : "popup.html",
+		"default_title" : "__MSG_app_name__"
 	}
 
 }
