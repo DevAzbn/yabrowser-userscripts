@@ -72,6 +72,57 @@ var imgURL = chrome.runtime.getURL('img/');
 				});
 			}
 		}
+
+	})();
+
+	(function(){
+		
+		if(/hh\.ru/i.test(window.location.hostname)) {
+			
+			var res = {};
+			var ls = $('a[href*="/resume/"]');//$('div[data-hh-resume-hash]');
+
+			ls.each(function(){
+				var l = $(this);
+				var div = l.closest('[data-hh-resume-hash]');
+				if(div) {
+					
+					var o = {};
+					var uid = div.attr('data-hh-resume-hash') || '';
+
+					if(uid && uid != '') {
+						
+						if(uid in res) {
+							
+						} else {
+
+							o.uid = div.attr('data-hh-resume-hash') || '';
+
+							var name_div = div.find('.resume-search-item__fullname').eq(0);
+							if(name_div && name_div != '') {
+								o.name = name_div.text().trim();
+								o.link = '/resume_converter/' + o.name + '.doc?hash=' + o.uid + '&type=rtf';
+							}
+
+							res[o.uid] = o;
+
+						}
+
+					}
+
+				}
+			});
+
+			if(Object.keys(res).length) {
+				if(confirm('Найдено вакансий: ' + Object.keys(res).length + '. Скачать их?')) {
+					for(var i in res) {
+						window.open(res[i].link, res[i].uid);
+					}
+				}
+			}
+
+		}
+	
 	})();
 
 })(jQuery);
