@@ -115,8 +115,12 @@ var imgURL = chrome.runtime.getURL('img/');
 
 			if(Object.keys(res).length) {
 				if(confirm('Найдено вакансий: ' + Object.keys(res).length + '. Скачать их?')) {
+					var _i = 1;
 					for(var i in res) {
-						window.open(res[i].link, res[i].uid);
+						_i++;
+						setTimeout(function() {
+							window.open(res[i].link, res[i].uid);
+						}, (_i * 777));
 					}
 				}
 			}
