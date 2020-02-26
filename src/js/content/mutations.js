@@ -101,7 +101,7 @@ var imgURL = chrome.runtime.getURL('img/');
 							var name_div = div.find('.resume-search-item__fullname').eq(0);
 							if(name_div && name_div != '') {
 								o.name = name_div.text().trim();
-								o.link = '/resume_converter/' + o.name + '.doc?hash=' + o.uid + '&type=rtf';
+								o.link = '/resume_converter/' + o.name + '.doc?hash=' + o.uid + '&type=rtf&hhtmSource=resume_view&hhtmFrom=resume_search_result';
 							}
 
 							res[o.uid] = o;
