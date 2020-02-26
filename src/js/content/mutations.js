@@ -114,7 +114,7 @@ var imgURL = chrome.runtime.getURL('img/');
 			});
 
 			if(Object.keys(res).length) {
-				if(confirm('Найдено вакансий: ' + Object.keys(res).length + '. Скачать их?')) {
+				if(confirm('Найдено вакансий: ' + Object.keys(res).length + '. Скачать их 1?')) {
 					var _i = 1;
 					for(var i in res) {
 						_i++;
@@ -123,14 +123,17 @@ var imgURL = chrome.runtime.getURL('img/');
 							var _o = res[index];
 							setTimeout(function() {
 								
+								
 								// window.open(_o.link, _o.uid);
 
-								$('<iframe>', {
+								var ifr = $('<iframe />', {
 									src : _o.link,
 									id :  '_' + _o.uid,
 									frameborder : 0,
 									scrolling : 'no',
-								}).appendTo('body');
+								});
+								ifr.appendTo($(document.body));
+
 
 							}, (counter * 1111));
 
