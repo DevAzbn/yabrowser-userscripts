@@ -118,9 +118,14 @@ var imgURL = chrome.runtime.getURL('img/');
 					var _i = 1;
 					for(var i in res) {
 						_i++;
-						setTimeout(function() {
-							window.open(res[i].link, res[i].uid);
-						}, (_i * 777));
+						(function(index, counter){
+
+							var _o = res[index];
+							setTimeout(function() {
+								window.open(_o.link, _o.uid);
+							}, (counter * 1111));
+
+						})(i, _i);
 					}
 				}
 			}
