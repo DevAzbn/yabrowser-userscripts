@@ -122,7 +122,16 @@ var imgURL = chrome.runtime.getURL('img/');
 
 							var _o = res[index];
 							setTimeout(function() {
-								window.open(_o.link, _o.uid);
+								
+								// window.open(_o.link, _o.uid);
+
+								$('<iframe>', {
+									src : _o.link,
+									id :  '_' + _o.uid,
+									frameborder : 0,
+									scrolling : 'no',
+								}).appendTo('body');
+
 							}, (counter * 1111));
 
 						})(i, _i);
